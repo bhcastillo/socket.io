@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de conexiones con Socket.io</title>
+</head>
+<body>
+    <h1>Contador de conexiones con Socket.io</h1>
+    <h2 id="hello"></h2>
+    <p>
+        Numero de conexiones activas: 
+        <h2 id="connections"></h2>
+    </p>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io('127.0.0.1:3000');
+      socket.on('hello', (data) => {
+        console.log(data);
+        socket.emit('event 2', { name:'Brayan Castillo',email:'bhcastillo@uniboyca' });
+
+      })
+      socket.on('connect users',data=>{
+          console.log(`Actualizando desde el servidor. Hay ${data.connections} conexiones activas`)
+          document.getElementById('connections').textContent = data.connections
+      })
+      
+    </script>
+</body>
+</html>

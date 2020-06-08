@@ -1,0 +1,14 @@
+{
+  "name": "contador-conexione",
+  "version": "1.0.0",
+  "description": "Contador de conexione",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon -e html app.js"
+  },
+  "author": "Brayan Castillo <bhcastillo@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io": "^2.3.0"
+  }
+}
